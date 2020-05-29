@@ -1,0 +1,125 @@
+@font-family: 'Montserrat', sans-serif;
+@font-family: 'Playfair Display', serif;
+
+#evcalendar{
+    position: center;
+    width: 1100px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.evc__container{
+    width: 100%;
+}
+
+.evc__months{
+    display: flex;
+    width: 100%;
+}
+
+.evc__month{
+    justify-content: space-between;
+    width: 24.999999%;
+}
+.evc__month:not(:first-child){
+    margin: 0 0 0 1em;
+}
+
+/* тайтл месяца начало */
+.evc__caption{
+    margin: 1em 0;
+}
+.evc__caption-text{
+    font-family: Playfair Display;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 24px;
+    color: #219FFF;
+}
+/* тайтл месяца коннец */
+/* стили названий дней недели начало */
+.evc__weekdays{
+    padding: 0.5em 0;
+    cursor: default;
+}
+.evc__weekdays-row{
+    display: flex;
+    justify-content: space-around;
+}
+.evc__weekday{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 12px;
+    text-align: right;
+    color: #787878;
+}
+.evc__weekday:nth-last-child(-n+2){
+    opacity: 0.54;
+}
+/* стили названий дней недели конец */
+/* тело месяца начало */
+.evc-month__week{
+    display: flex;
+    justify-content: space-around;
+}
+.evc__day{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border-top: 1px solid #E3E5E6;
+    cursor: pointer;
+}
+.evc__day:hover{
+    background: #F4F3F3;
+}
+.evc__day:nth-last-child(-n+2) .evc__day-date{
+    opacity: 0.54;
+}
+.evc__day-wrap{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: flex-end; */
+    padding: 0.5em 0;
+}
+.evc__day-date{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: right;
+    color: #000000;
+}
+.evc__day-date-empty::before{
+    content: "\A0";
+}
+.evc__day-content{
+    display: flex;
+}
+.evc__day-content_empty,
+.evc__day-content_meeting,
+.evc__day-content_lecture{
+    line-height: 0.5em;
+    padding-left: 0.1em;
+}
+.evc__day-content_meeting::before{
+    color: #219FFF;
+}
+.evc__day-content_lecture::before{
+    color: #44D883;
+}
+.evc__day-content_meeting::before,
+.evc__day-content_lecture::before{
+    content: "\2B24";
+    line-height: 0.1em;
+    font-size: 0.6em;
+}
+.evc__day-content_empty::before{
+    content: "\A0";
+}
+/* тело месяца конец */
